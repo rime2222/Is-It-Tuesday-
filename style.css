@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #FFB74D, #F48FB1);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+  color: #D32F2F;
+  font-family: 'Architects Daughter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#startScreen, #app, #wishInterface {
+  text-align: center;
+}
+
+#appTitle {
+  font-size: 3em;
+  font-family: 'Luckiest Guy', cursive;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 #F8BBD0;
+  color: #E91E63;
+}
+
+#startScreen .slogan {
+  font-style: normal;
+  color: #F06292;
+  margin-bottom: 20px;
+}
+
+#userName, #tuesdayWish {
+  padding: 10px 15px;
+  border: 2px solid #F8BBD0;
+  border-radius: 5px;
+  background-color: #FFECB3;
+  color: #D32F2F;
+  margin-bottom: 20px;
+  font-size: 1em;
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+}
+
+#tuesdayWish {
+  height: 150px;
+  width: 80%;
+}
+
+#startAppButton, #startButton, #nextButton, #backButton, #muteButton, #backToStart, #homeButton {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #F06292, #E91E63);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0 #F8BBD0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: none;
+  display: inline-block;
+  margin: 10px;
+}
+
+#startAppButton:hover, #startButton:hover, #nextButton:hover, #backButton:hover, #muteButton:hover, #backToStart:hover, #homeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 #F48FB1;
+}
+
+#roulette-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 20px auto;
+}
+
+#roulette {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #E0E0E0, #BDBDBD);
+  position: relative;
+  transition: transform 3s ease-in-out;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#roulette::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+#roulette-container::after {
+  content: '▼';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #F06292;
+  font-size: 2em;
+}
+
+#result {
+  font-size: 1.2em;
+  color: #E91E63;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  white-space: normal;
+  text-align: center;
+  transform-origin: center;
+  overflow-wrap: break-word;
+  padding: 5px;
+}
+
+#roulette.spinning-stripes #result {
+  transform: rotate(0deg);
+}
+
+#roulette.spinning-stripes::before {
+    display: none;
+}
+
+#credits {
+  font-size: 1em;
+  margin-top: 20px;
+  color: #F06292;
+}
+
+#tuesdayPerks {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  color: #F06292;
+}
+
+#tuesdayPerks li {
+  margin-bottom: 10px;
+}
+
+#muteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #E91E63;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#copyright {
+  font-size: 0.7em;
+  color: #F06292;
+  opacity: 0.5;
+  margin-top: 10px;
+}
